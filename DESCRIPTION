@@ -1,0 +1,10 @@
+Package: repro.akter2024
+Title: Reproducibility Package for Akter et al. 2024
+Version: 0.1.0
+Authors@R: 
+    person("Luna", "Fazio", , "bmfaziol@gmail.com", role = c("aut", "cre"))
+Description: Code and data to enable replication of Akter et al. 2024 (10.1038/s41562-024-02002-7)
+License: AGPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
