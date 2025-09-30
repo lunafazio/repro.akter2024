@@ -13,6 +13,13 @@ You can install this package from GitHub using `devtools`:
 devtools::install_github("lunafazio/repro.akter2024")
 ```
 
+If GitHub is giving you issues, you can also download the repository zip and do
+a local install:
+
+``` r
+devtools::install_local("yourpath/Downloads/repro.akter2024-main.zip")
+```
+
 ## Usage
 
 ### Loading study data
