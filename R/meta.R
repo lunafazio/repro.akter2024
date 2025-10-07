@@ -9,7 +9,7 @@
 #' @return A `meta` object.
 #' @export
 metaOR = function(data) {
-  meta::metagen(
+  suppressWarnings(meta::metagen(
     TE = TE, seTE = seTE,
     data = data,
     studlab = study,
@@ -17,7 +17,7 @@ metaOR = function(data) {
     common = TRUE, random = TRUE,
     method.tau = "REML",
     method.random.ci = TRUE
-  )
+  ))
 }
 
 #' Wrapper for the meta-analysis function called on MD measures.
