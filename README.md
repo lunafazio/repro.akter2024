@@ -44,8 +44,7 @@ make_table3()
 make_table4()
 ```
 
-Detailed processing steps can be found in the
-[R/tables.R](https://github.com/lunafazio/repro.akter2024/blob/main/R/tables.R).
+Detailed processing steps can be found in [R/tables.R](https://github.com/lunafazio/repro.akter2024/blob/main/R/tables.R).
 
 ### Reproducing study figures
 
@@ -57,8 +56,7 @@ make_fig2()
 make_fig3()
 ```
 
-Detailed processing steps can be found in the
-[R/figures.R](https://github.com/lunafazio/repro.akter2024/blob/main/R/figures.R).
+Detailed processing steps can be found in [R/figures.R](https://github.com/lunafazio/repro.akter2024/blob/main/R/figures.R).
 
 ## Acknowledgements
 
