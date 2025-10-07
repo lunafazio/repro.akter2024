@@ -1,5 +1,8 @@
 #' Load the study's data.
 #'
+#' When called, the function prints the local path where the source `xls` file
+#' resides.
+#' 
 #' @param measure Must exactly match "OR" or "MD".
 #' @return A tibble with data for the specified measure.
 #' @references

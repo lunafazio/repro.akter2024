@@ -13,7 +13,8 @@ load_data(measure = NULL)
 A tibble with data for the specified measure.
 }
 \description{
-Load the study's data.
+When called, the function prints the local path where the source \code{xls} file
+resides.
 }
 \references{
 Akter, S., Rahman, M.M., Rouyard, T. et al. A systematic review and network

@@ -25,10 +25,14 @@ devtools::install_local("yourpath/Downloads/repro.akter2024-main.zip")
 ### Loading study data
 
 ``` r
-library(repro.akter2024)
+library(repro.akter2024) # First load the package
 dfOR <- load_data("OR") # Loads the data for Odds Ratio measures
 dfMD <- load_data("MD") # Loads the data for Mean Difference measures
 ```
+
+The `xls` files published with the original study are included along with the
+package. The `load_data` function takes the information directly from those
+files and shows the local path where they have been stored when called.
 
 ### Reproducing study tables
 
