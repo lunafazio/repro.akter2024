@@ -8,3 +8,11 @@ License: AGPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
+Imports: 
+    dplyr,
+    forestplot,
+    meta,
+    metafor,
+    netmeta,
+    readxl,
+    tidyr
