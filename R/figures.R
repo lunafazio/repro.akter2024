@@ -56,7 +56,7 @@ make_fig2 = function() {
 #' @return Invisibly returns the path where the figures were saved.
 #' @export
 make_fig3 = function() {
-  suppressMessages(load_data("OR")) |>
+  df_input = suppressMessages(load_data("OR")) |>
   tidyr::nest(.by = c(Outcome,treat1)) |>
   dplyr::filter(Outcome %in% c("Smoking prevalence", "E-cigarettes use")) |>
   dplyr::mutate(
