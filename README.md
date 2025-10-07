@@ -43,3 +43,6 @@ make_table2()
 make_table3()
 make_table4()
 ```
+
+The detailed processing steps can be found in the
+[function definitions](https://github.com/lunafazio/repro.akter2024/blob/main/R/tables.R).
