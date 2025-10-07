@@ -44,5 +44,27 @@ make_table3()
 make_table4()
 ```
 
-The detailed processing steps can be found in the
-[function definitions](https://github.com/lunafazio/repro.akter2024/blob/main/R/tables.R).
+Detailed processing steps can be found in the
+[R/tables.R](https://github.com/lunafazio/repro.akter2024/blob/main/R/tables.R).
+
+### Reproducing study figures
+
+Figures 1 and 4 are omitted.
+
+``` r
+# NOTE: These functions will generate PDF files in your working directory
+make_fig2()
+make_fig3()
+```
+
+Detailed processing steps can be found in the
+[R/figures.R](https://github.com/lunafazio/repro.akter2024/blob/main/R/figures.R).
+
+## Acknowledgements
+
+The code in this package is adapted from the original R scripts provided by the
+authors of the study, available at [ryotanakamura1/smoking](https://github.com/ryotanakamura1/smoking).
+The original script is available in plain text format at
+[inst/original/akter2024.R](https://github.com/lunafazio/repro.akter2024/blob/main/inst/original/akter2024.R).
+
+This package was developed as part of the 2025 FU Berlin Replication Games.
