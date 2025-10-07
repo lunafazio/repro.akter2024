@@ -16,8 +16,7 @@ metaOR = function(data) {
     sm = "OR",
     common = TRUE, random = TRUE,
     method.tau = "REML",
-    method.random.ci = TRUE
-  ))
+    method.random.ci = TRUE))
 }
 
 #' Wrapper for the meta-analysis function called on MD measures.
@@ -38,8 +37,7 @@ metaMD = function(data) {
     sm = "MD",
     common = TRUE, random = TRUE,
     method.tau = "REML",
-    method.random.ci = TRUE
-  )
+    method.random.ci = TRUE)
 }
 
 #' Wrapper for the network meta-analysis function.
@@ -62,6 +60,5 @@ netmetaOR = function(data) {
     common = FALSE, random = TRUE,
     reference.group = "Control",
     details.chkmultiarm = TRUE,
-    sep.trts = " vs "
-  )
+    sep.trts = " vs ")
 }
