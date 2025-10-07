@@ -11,13 +11,22 @@
 #' smoke cessation outcomes
 #' @export
 make_table2 = function() {
-  suppressMessages(load_data("OR")) |>
+  # Load data
+  dfOR = suppressMessages(load_data("OR"))
+
+  # Auxiliary data frame for "Quit any" outcome (combines all "Quit *" outcomes)
+  dfAny = dfOR |>
+  dplyr::filter(grepl("Quit ", Outcome)) |>
+  dplyr::mutate(Outcome = "Quit any")
+
+  # Produce table
+  dplyr::bind_rows(dfOR,dfAny) |>
   tidyr::nest(.by = c(Outcome,treat1)) |>
   dplyr::filter(grepl("Quit ", Outcome)) |>
   dplyr::mutate(
     Outcome = factor(
       Outcome,
-      c("Quit intention", "Quit attempt", "Quit rate"),
+      c("Quit intention", "Quit attempt", "Quit rate", "Quit any"),
       ordered = TRUE
     )
   ) |>
@@ -41,7 +50,8 @@ make_table2 = function() {
   dplyr::select(-data) |>
   dplyr::rename(outcome = Outcome, policy = treat1) |>
   # Manual reordering to better match original table
-  dplyr::slice(c(1:11,13,12,14:18,21,19,20,25,24,26,23,22))
+  dplyr::slice(c(1:11,13,12,14:18,21,19,20,25,24,26,23,22,
+    27:30,35,32,34,31,33,37,39,38,36))
 }
 
 #' Produce output for Table 3.
