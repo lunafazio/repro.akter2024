@@ -15,3 +15,8 @@ A tibble with data for the specified measure.
 \description{
 Load the study's data.
 }
+\references{
+Akter, S., Rahman, M.M., Rouyard, T. et al. A systematic review and network
+meta-analysis of population-level interventions to tackle smoking behaviour.
+Nat Hum Behav 8, 2367–2391 (2024). \url{https://doi.org/10.1038/s41562-024-02002-7}
+}
