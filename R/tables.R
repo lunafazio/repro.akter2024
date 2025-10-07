@@ -21,7 +21,9 @@ make_table2 = function() {
       ordered = TRUE
     )
   ) |>
+  # Study count based on unique study IDs
   dplyr::mutate(n_studies = sapply(data,\(x)length(unique(x$unid)))) |>
+  # metaOR defined in R/meta.R
   dplyr::mutate(data = lapply(data, metaOR)) |>
   dplyr::arrange(Outcome, -n_studies) |>
   dplyr::mutate(
@@ -38,6 +40,7 @@ make_table2 = function() {
   ) |>
   dplyr::select(-data) |>
   dplyr::rename(outcome = Outcome, policy = treat1) |>
+  # Manual reordering to better match original table
   dplyr::slice(c(1:11,13,12,14:18,21,19,20,25,24,26,23,22))
 }
 
@@ -64,7 +67,9 @@ make_table3 = function() {
   tidyr::nest(.by = c(Outcome,treat1)) |>
   dplyr::filter(Outcome %in% t3_outcomes) |>
   dplyr::mutate(Outcome = factor(Outcome, t3_outcomes, ordered = TRUE)) |>
+  # Study count based on unique study IDs
   dplyr::mutate(n_studies = sapply(data,\(x)length(unique(x$unid)))) |>
+  # metaOR defined in R/meta.R
   dplyr::mutate(data = lapply(data, metaOR)) |>
   dplyr::arrange(Outcome, -n_studies) |>
   dplyr::mutate(
@@ -81,6 +86,7 @@ make_table3 = function() {
   ) |>
   dplyr::select(-data) |>
   dplyr::rename(outcome = Outcome, policy = treat1) |>
+  # Manual reordering to better match original table
   dplyr::slice(c(1:5,8,7,9,12,11,10,6,14,13,15,17,16,19,18,22,23,20,21))
 }
 
@@ -112,7 +118,9 @@ make_table4 = function() {
   tidyr::nest(.by = c(Outcome,treat1)) |>
   dplyr::filter(Outcome %in% t4_outcomes) |>
   dplyr::mutate(Outcome = factor(Outcome, t4_outcomes, ordered = TRUE)) |>
+  # Study count based on unique study IDs
   dplyr::mutate(n_studies = sapply(data,\(x)length(unique(x$unid)))) |>
+  # metaMD defined in R/meta.R
   dplyr::mutate(data = lapply(data, metaMD)) |>
   dplyr::arrange(Outcome, -n_studies) |>
   dplyr::mutate(
@@ -129,6 +137,7 @@ make_table4 = function() {
   ) |>
   dplyr::select(-data) |>
   dplyr::rename(outcome = Outcome, policy = treat1) |>
+  # Manual reordering to better match original table
   dplyr::slice(c(1:3,5,4,7,6,11,10,8,9,12,14,13,15,18,17,16,19,20,22,23,21,
     25,24,32,26,29,28,31,30,27,36,34,35,33))
 }
