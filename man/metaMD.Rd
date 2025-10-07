@@ -13,6 +13,9 @@ metaMD(data)
 A \code{meta} object.
 }
 \description{
+Used for pairwise meta-analysis in Table 4.
+}
+\details{
 Argument names changed according to newer version of \code{meta} package.
 Results are unchanged.
 }

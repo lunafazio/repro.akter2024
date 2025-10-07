@@ -13,6 +13,9 @@ metaOR(data)
 A \code{meta} object.
 }
 \description{
+Used for pairwise meta-analysis in Tables 2 and 3.
+}
+\details{
 Argument names changed according to newer version of \code{meta} package.
 Results are unchanged.
 }
