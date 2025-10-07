@@ -42,6 +42,8 @@ Table 1 is omitted as it does not present analysis results.
 make_table2()
 make_table3()
 make_table4()
+# Suggestion: You can call View() on the resulting data frames to explore them
+# in a spreadsheet-like interface.
 ```
 
 Detailed processing steps can be found in [R/tables.R](https://github.com/lunafazio/repro.akter2024/blob/main/R/tables.R).
