@@ -30,14 +30,14 @@ metaOR = function(data) {
 #' @return A `meta` object.
 #' @export
 metaMD = function(data) {
-  meta::metagen(
+  suppressWarnings(meta::metagen(
     TE = ES, seTE = SE,
     data = data,
     studlab = study,
     sm = "MD",
     common = TRUE, random = TRUE,
     method.tau = "REML",
-    method.random.ci = TRUE)
+    method.random.ci = TRUE))
 }
 
 #' Wrapper for the network meta-analysis function.
