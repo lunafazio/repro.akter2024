@@ -32,4 +32,10 @@ dfMD <- load_data("MD") # Loads the data for Mean Difference measures
 
 ### Reproducing study tables
 
-Pending!
+Table 1 is omitted as it does not present analysis results.
+
+``` r
+make_table2()
+make_table3()
+make_table4()
+```
