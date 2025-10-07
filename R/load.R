@@ -14,6 +14,6 @@ load_data = function(measure=NULL) {
     "data 1_repository.xls", package="repro.akter2024")
   if(measure == "MD") file = system.file("extdata",
     "data 2_repository.xls", package="repro.akter2024")
-  cat("Loaded from ", file, "\n")
+  message("Loaded from ", file)
   return(readxl::read_xls(file))
 }
