@@ -14,9 +14,9 @@ metaOR = function(data) {
     data = data,
     studlab = study,
     sm = "OR",
-    common = TRUE, random = TRUE,
+    fixed = TRUE, random = TRUE,
     method.tau = "REML",
-    method.random.ci = TRUE))
+    hakn = TRUE))
 }
 
 #' Wrapper for the meta-analysis function called on MD measures.
@@ -35,9 +35,9 @@ metaMD = function(data) {
     data = data,
     studlab = study,
     sm = "MD",
-    common = TRUE, random = TRUE,
+    fixed = TRUE, random = TRUE,
     method.tau = "REML",
-    method.random.ci = TRUE))
+    hakn = TRUE))
 }
 
 #' Wrapper for the network meta-analysis function.
