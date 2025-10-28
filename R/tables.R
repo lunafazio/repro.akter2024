@@ -45,7 +45,7 @@ make_table2 = function() {
     I2u = sapply(data, function(x)round(100*x$upper.I2,1)),
     tau2 = sapply(data, function(x)round(x$tau2,2)),
     tau2l = sapply(data, function(x)round(x$lower.tau2,2)),
-    tau2u = sapply(data, function(x)round(x$upper.tau2))
+    tau2u = sapply(data, function(x)round(x$upper.tau2,2))
   ) |>
   dplyr::select(-data) |>
   dplyr::rename(outcome = Outcome, policy = treat1) |>
@@ -92,7 +92,7 @@ make_table3 = function() {
     I2u = sapply(data, function(x)round(100*x$upper.I2,1)),
     tau2 = sapply(data, function(x)round(x$tau2,2)),
     tau2l = sapply(data, function(x)round(x$lower.tau2,2)),
-    tau2u = sapply(data, function(x)round(x$upper.tau2))
+    tau2u = sapply(data, function(x)round(x$upper.tau2,2))
   ) |>
   dplyr::select(-data) |>
   dplyr::rename(outcome = Outcome, policy = treat1) |>
@@ -143,7 +143,7 @@ make_table4 = function() {
     I2u = sapply(data, function(x)round(100*x$upper.I2,1)),
     tau2 = sapply(data, function(x)round(x$tau2,2)),
     tau2l = sapply(data, function(x)round(x$lower.tau2,2)),
-    tau2u = sapply(data, function(x)round(x$upper.tau2))
+    tau2u = sapply(data, function(x)round(x$upper.tau2,2))
   ) |>
   dplyr::select(-data) |>
   dplyr::rename(outcome = Outcome, policy = treat1) |>
