@@ -102,7 +102,7 @@ make_table3 = function() {
 
 #' Produce output for Table 4.
 #' 
-#' All measures in the OR dataset are used in the calculation. This includes
+#' All measures in the MD dataset are used in the calculation. This includes
 #' multiple measures from the same study, as this was found to give the closest
 #' match to the original results.
 #' 

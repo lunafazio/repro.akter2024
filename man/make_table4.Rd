@@ -11,7 +11,7 @@ A tibble with the results of pairwise meta-analysis for
 smoking consumption outcomes
 }
 \description{
-All measures in the OR dataset are used in the calculation. This includes
+All measures in the MD dataset are used in the calculation. This includes
 multiple measures from the same study, as this was found to give the closest
 match to the original results.
 }
