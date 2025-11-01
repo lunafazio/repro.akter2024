@@ -4,7 +4,11 @@
 \alias{make_table4}
 \title{Produce output for Table 4.}
 \usage{
-make_table4()
+make_table4(impute_SE = TRUE)
+}
+\arguments{
+\item{impute_SE}{Logical indicating whether to impute the standard errors that
+were missing from the original dataset}
 }
 \value{
 A tibble with the results of pairwise meta-analysis for
@@ -16,6 +20,13 @@ multiple measures from the same study, as this was found to give the closest
 match to the original results.
 }
 \details{
+The original dataset has several missing values in the \code{SE} (standard error)
+column. Studies without SEs are excluded from the meta-analytic estimates.
+The \code{impute_SE} argument imputes the missing SEs using the width of the
+reported confidence intervals according to the formula:
+
+\deqn{SE = (upper - lower) / (2 * 1.96)}.
+
 Cigarette consumption contains additional row not present in original table.
 Number of studies is separately calculated based on the unique study IDs.
 Row order adjusted manually to match original table.

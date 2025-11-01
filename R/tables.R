@@ -106,14 +106,23 @@ make_table3 = function() {
 #' multiple measures from the same study, as this was found to give the closest
 #' match to the original results.
 #' 
+#' The original dataset has several missing values in the `SE` (standard error)
+#' column. Studies without SEs are excluded from the meta-analytic estimates.
+#' The `impute_SE` argument imputes the missing SEs using the width of the
+#' reported confidence intervals according to the formula:
+#' 
+#' \deqn{SE = (upper - lower) / (2 * 1.96)}.
+#' 
 #' Cigarette consumption contains additional row not present in original table.
 #' Number of studies is separately calculated based on the unique study IDs.
 #' Row order adjusted manually to match original table.
 #' 
+#' @param impute_SE Logical indicating whether to impute the standard errors that
+#' were missing from the original dataset
 #' @return A tibble with the results of pairwise meta-analysis for
 #' smoking consumption outcomes
 #' @export
-make_table4 = function() {
+make_table4 = function(impute_SE = TRUE) {
   t4_outcomes = c(
     "Cigarette consumption",
     "E-cig consumption",
@@ -125,6 +134,11 @@ make_table4 = function() {
   suppressMessages(load_data("MD")) |>
   dplyr::mutate(Outcome =
     ifelse(grepl("Quit ", Outcome), "Quit attempt/rate", Outcome)) |>
+  # Impute missing SEs
+  dplyr::mutate(SE = case_when(
+    is.na(SE) ~ ifelse(impute_SE, (uci-lci)/3.92, SE),
+    TRUE ~ SE
+  )) |>
   tidyr::nest(.by = c(Outcome,treat1)) |>
   dplyr::filter(Outcome %in% t4_outcomes) |>
   dplyr::mutate(Outcome = factor(Outcome, t4_outcomes, ordered = TRUE)) |>
