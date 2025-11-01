@@ -135,7 +135,7 @@ make_table4 = function(impute_SE = TRUE) {
   dplyr::mutate(Outcome =
     ifelse(grepl("Quit ", Outcome), "Quit attempt/rate", Outcome)) |>
   # Impute missing SEs
-  dplyr::mutate(SE = case_when(
+  dplyr::mutate(SE = dplyr::case_when(
     is.na(SE) ~ ifelse(impute_SE, (uci-lci)/3.92, SE),
     TRUE ~ SE
   )) |>
