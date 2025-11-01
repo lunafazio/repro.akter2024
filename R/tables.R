@@ -108,8 +108,10 @@ make_table3 = function() {
 #' 
 #' The original dataset has several missing values in the `SE` (standard error)
 #' column. Studies without SEs are excluded from the meta-analytic estimates.
-#' The `impute_SE` argument imputes the missing SEs using the width of the
-#' reported confidence intervals according to the formula:
+#' This is the default estimation mode, as it provides the closest match to the
+#' results of the original study. The `impute_SE` argument imputes the missing
+#' SEs using the width of the reported confidence intervals according to the
+#' formula:
 #' 
 #' \deqn{SE = (upper - lower) / (2 * 1.96)}.
 #' 
@@ -122,7 +124,7 @@ make_table3 = function() {
 #' @return A tibble with the results of pairwise meta-analysis for
 #' smoking consumption outcomes
 #' @export
-make_table4 = function(impute_SE = TRUE) {
+make_table4 = function(impute_SE = FALSE) {
   t4_outcomes = c(
     "Cigarette consumption",
     "E-cig consumption",

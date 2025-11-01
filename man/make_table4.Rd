@@ -4,7 +4,7 @@
 \alias{make_table4}
 \title{Produce output for Table 4.}
 \usage{
-make_table4(impute_SE = TRUE)
+make_table4(impute_SE = FALSE)
 }
 \arguments{
 \item{impute_SE}{Logical indicating whether to impute the standard errors that
@@ -22,8 +22,10 @@ match to the original results.
 \details{
 The original dataset has several missing values in the \code{SE} (standard error)
 column. Studies without SEs are excluded from the meta-analytic estimates.
-The \code{impute_SE} argument imputes the missing SEs using the width of the
-reported confidence intervals according to the formula:
+This is the default estimation mode, as it provides the closest match to the
+results of the original study. The \code{impute_SE} argument imputes the missing
+SEs using the width of the reported confidence intervals according to the
+formula:
 
 \deqn{SE = (upper - lower) / (2 * 1.96)}.
 
